@@ -66,7 +66,7 @@ The payment data api requires a lot of data, so bear with me...<br>
 GNPaymentData paymentData = GNPaymentData(customer, address, gnToken);
 ```
 ### 2.4 Creating your custom payment code:
-Since the code to complete the payment should be in your backend, you should create a simple class to access your backend.<br>
+Since the code to complete the payment should be in your backend, you should create a simple class to make your life easier.<br>
 Here's an example:
 
 ```dart

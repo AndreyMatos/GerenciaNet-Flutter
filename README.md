@@ -2,7 +2,7 @@
 
 Gerencianet credit card payment sdk implementation in dart
 
-# 1 - Getting Started - Getting a Payment Token
+# 1) Getting Started - Getting a Payment Token
 
 To pay with credit cards, first we're going to need a **Payment Token**.<br>
 The first step is to create an instance of GNConfig with your account code.<br>
@@ -34,7 +34,7 @@ Finally, you can  retrieve the token:
 GNPaymentToken gnToken = await api.retrievePaymentToken(cc);
 ```
 
-# 2 - Using the token to make payments
+# 2) Using the token to make payments
 
 With the payment token in hands we can now make real payments!<br>
 The payment data api requires a lot of data, so bear with me...<br>
@@ -116,7 +116,7 @@ Using the class written before, this is all you should have to do to complete th
 ```
 If you want to see the complete code, check out the test folder.
 
-# 3 - Backend code
+# 3) Backend code
 We're almost there!<br>
 I'm going to use nodeJS here to demonstrate how the backend should look like (at least the bare minimum), but you can use many other languages https://dev.gerencianet.com.br/docs/instalacao-da-api.<br>
 Bear in mind that this is just for demonstration purposes, in a production environment you should be more careful.<br><br>

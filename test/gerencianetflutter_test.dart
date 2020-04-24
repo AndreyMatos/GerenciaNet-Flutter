@@ -12,6 +12,22 @@ import 'package:gerencianetflutter/gn_payment_token.dart';
 import 'my_endpoint.dart';
 
 void main() {
+  test('test token retrieval in production', () async {
+    final config = GNConfig(accountCode: "your_account_code", isSandbox: false);
+    final api = GNApi(config: config);
+    //this is a false credit card number generated online
+    final cc = GNCreditCard(
+      number: "4342558146566662",
+      brand: "visa",
+      expirationMonth: "04",
+      expirationYear: "2021",
+      cvv: "832",
+    );
+    GNPaymentToken gnToken = await api.retrievePaymentToken(cc);
+    expect(gnToken.cardMask, equals("XXXXXXXXXXXX6662"));
+    expect(gnToken.token, isNotEmpty);
+  });
+
   test('test payment', () async {
     final config = GNConfig(accountCode: "your_account_code", isSandbox: true);
     final api = GNApi(config: config);
